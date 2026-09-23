@@ -1,0 +1,23 @@
+dineshreddy-portfolio/
+├── public/
+│   ├── Dinesh-Reddy-Resume.pdf
+│   └── favicon.svg
+├── src/
+│   ├── assets/
+│   │   └── dinesh-profile.jpg
+│   ├── components/
+│   │   ├── Header.jsx
+│   │   ├── About.jsx
+│   │   ├── Skills.jsx
+│   │   ├── Projects.jsx
+│   │   └── Contact.jsx
+│   ├── pages/
+│   │   └── DocumentAI.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── styles.css
+├── .gitignore
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
