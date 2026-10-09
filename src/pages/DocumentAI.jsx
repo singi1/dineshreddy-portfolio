@@ -1,8 +1,10 @@
-
 import { useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+
 const API_URL =
   import.meta.env.VITE_DOCUMENT_AI_API || "http://localhost:8000";
+
+const TOKEN_STORAGE_KEY = "document_ai_token";
 
 export default function DocumentAI() {
   const [file, setFile] = useState(null);
@@ -18,8 +20,7 @@ export default function DocumentAI() {
   function handleFile(selectedFile) {
     if (!selectedFile) return;
 
-    const extension = selectedFile.name
-      .split(".").pop().toLowerCase();
+    const extension = selectedFile.name.split(".").pop().toLowerCase();
 
     if (!["pdf", "docx", "txt"].includes(extension)) {
       setError("Only PDF, DOCX and TXT files are supported.");
@@ -31,8 +32,10 @@ export default function DocumentAI() {
       return;
     }
 
+    sessionStorage.removeItem(TOKEN_STORAGE_KEY);
     setFile(selectedFile);
     setResult(null);
+    setQuestion("");
     setAnswer("");
     setError("");
   }
@@ -45,6 +48,9 @@ export default function DocumentAI() {
 
     setLoading(true);
     setError("");
+    setResult(null);
+    setAnswer("");
+    sessionStorage.removeItem(TOKEN_STORAGE_KEY);
 
     try {
       const formData = new FormData();
@@ -61,9 +67,16 @@ export default function DocumentAI() {
       }
 
       const data = await response.json();
+      if (!data.document_id || !data.document_token) {
+        throw new Error(
+          "Backend did not return document credentials. Deploy the secured FastAPI backend first."
+        );
+      }
+
+      sessionStorage.setItem(TOKEN_STORAGE_KEY, data.document_token);
       setResult(data);
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Document analysis failed.");
     } finally {
       setLoading(false);
     }
@@ -72,13 +85,22 @@ export default function DocumentAI() {
   async function askQuestion() {
     if (!question.trim() || !result) return;
 
+    const token = sessionStorage.getItem(TOKEN_STORAGE_KEY);
+    if (!token) {
+      setError("Document access token is missing. Please upload the document again.");
+      return;
+    }
+
     setAsking(true);
     setError("");
 
     try {
       const response = await fetch(`${API_URL}/api/ask`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "X-Document-Token": token,
+        },
         body: JSON.stringify({
           document_id: result.document_id,
           question,
@@ -86,28 +108,33 @@ export default function DocumentAI() {
       });
 
       if (!response.ok) {
-        throw new Error(await response.text());
+        const details = await response.text();
+        throw new Error(details || "Could not answer your question.");
       }
 
       const data = await response.json();
       setAnswer(data.answer || "No answer returned.");
     } catch (err) {
-      setError(err.message);
+      setError(err.message || "Could not answer your question.");
     } finally {
       setAsking(false);
     }
   }
 
   return (
-    <div style={{
-      maxWidth: 900,
-      margin: "40px auto",
-      padding: 24,
-      fontFamily: "Arial, sans-serif"
-    }}>
+    <div
+      style={{
+        maxWidth: 900,
+        margin: "40px auto",
+        padding: 24,
+        fontFamily: "Arial, sans-serif",
+      }}
+    >
       <h1>AI Document Analyzer</h1>
-      <p>Upload a document to generate summaries,
-         key points and ask questions using AI.</p>
+      <p>
+        Upload a document to generate summaries, key points and ask questions
+        using AI.
+      </p>
 
       <div
         onClick={() => inputRef.current?.click()}
@@ -123,7 +150,7 @@ export default function DocumentAI() {
           textAlign: "center",
           cursor: "pointer",
           background: "#f7faff",
-          color: "#223b60"
+          color: "#223b60",
         }}
       >
         <input
@@ -159,16 +186,14 @@ export default function DocumentAI() {
           color: "white",
           border: "none",
           borderRadius: 8,
-          cursor: "pointer"
+          cursor: "pointer",
         }}
       >
         {loading ? "Analyzing..." : "Analyze with AI"}
       </button>
 
       {error && (
-        <p style={{ color: "red", overflowWrap: "anywhere" }}>
-          {error}
-        </p>
+        <p style={{ color: "red", overflowWrap: "anywhere" }}>{error}</p>
       )}
 
       {result && (
@@ -186,7 +211,7 @@ export default function DocumentAI() {
             style={{
               padding: 12,
               width: "100%",
-              boxSizing: "border-box"
+              boxSizing: "border-box",
             }}
           />
 
