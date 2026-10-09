@@ -9,7 +9,7 @@ const projects = [
     description:
       "A practical Generative AI application designed to accept PDF/DOCX/TXT files, generate summaries, identify key points and support conversational document Q&A.",
     tags: ["Generative AI", "Document Processing", "React", "Cloud"],
-    action: <a href="/document-ai"> "Try Live Demo →"</a>,
+    action: <a href="/document-ai"> Try Live Demo →</a>,
     
   },
   {
