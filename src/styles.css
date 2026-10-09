@@ -283,8 +283,9 @@ a {
 }
 
 .sectionTitle {
-  max-width: 880px;
-  margin: 11px 0 34px;
+  max-width: none;
+   width: 100%;
+     white-space: nowrap;
   font-size: clamp(2.1rem, 4.3vw, 3.7rem);
   line-height: 1.08;
   letter-spacing: -.04em;
@@ -802,4 +803,55 @@ a {
 .certificationsSection {
   background: #f4f7fc;
   padding: 85px 0;
+}
+
+.certificationsTitle {
+  max-width: none;
+  width: 100%;
+  white-space: nowrap;
+  font-size: clamp(1rem, 4.2vw, 3.7rem);
+}
+
+.ai-markdown {
+  line-height: 1.75;
+  color: #26364a;
+}
+
+.ai-markdown h2,
+.ai-markdown h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.ai-markdown p {
+  margin-bottom: 12px;
+}
+
+.ai-markdown ul,
+.ai-markdown ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.ai-markdown li {
+  margin-bottom: 8px;
+}
+
+.ai-markdown code {
+  background: #edf2f7;
+  padding: 2px 6px;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.ai-markdown pre {
+  background: #f1f5f9;
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.ai-markdown pre code {
+  background: transparent;
+  padding: 0;
 }

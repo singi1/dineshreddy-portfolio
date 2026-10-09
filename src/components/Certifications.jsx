@@ -32,11 +32,9 @@ export default function Certifications() {
     <section className="section certificationsSection" id="certifications">
       <div className="container">
         <p className="sectionLabel">CERTIFICATIONS</p>
-
-        <h2 className="sectionTitle">
+        <h2 className="sectionTitle certificationsTitle">
           Professional certifications & credentials.
         </h2>
-
         <div className="certGrid">
           {certifications.map((cert) => (
             <article className="certCard" key={cert.title}>
