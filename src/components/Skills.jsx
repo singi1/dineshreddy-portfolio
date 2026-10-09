@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 const skillGroups = [
   {
     title: "AI & Data",
@@ -79,7 +77,6 @@ const skillGroups = [
       "SAFe 6 POPM",
       "SAFe 6 Scrum Master",
       "SAFe 6 DevOps Practitioner",
-      "Certified SAFe® 5 DevOps Practitioner",
       "PMP",
       "Microsoft Azure AI Fundamentals",
       "EMCPA Associate",
@@ -88,16 +85,6 @@ const skillGroups = [
 ];
 
 export default function Skills() {
-  useEffect(() => {
-    const scriptUrl = "https://cdn.credly.com/assets/utilities/embed.js";
-    if (document.querySelector(`script[src="${scriptUrl}"]`)) return;
-
-    const script = document.createElement("script");
-    script.src = scriptUrl;
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
   return (
     <section className="section sectionAlt" id="skills">
       <div className="container">
@@ -117,16 +104,6 @@ export default function Skills() {
                   </span>
                 ))}
               </div>
-              {group.title === "Certifications" && (
-                <div className="credlyBadgeWrap">
-                  <div
-                    data-iframe-width="150"
-                    data-iframe-height="270"
-                    data-share-badge-id="946bb71f-f2e5-4968-acf2-ac7e66cae660"
-                    data-share-badge-host="https://www.credly.com"
-                  />
-                </div>
-              )}
             </article>
           ))}
         </div>
