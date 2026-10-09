@@ -71,17 +71,6 @@ const skillGroups = [
       "Rally",
     ],
   },
-  {
-    title: "Certifications",
-    skills: [
-      "SAFe 6 POPM",
-      "SAFe 6 Scrum Master",
-      "SAFe 6 DevOps Practitioner",
-      "PMP",
-      "Microsoft Azure AI Fundamentals",
-      "EMCPA Associate",
-    ],
-  },
 ];
 
 export default function Skills() {
