@@ -3,6 +3,16 @@ import { ArrowUpRight, Bot, GitBranch, Network, Workflow } from "lucide-react";
 const projects = [
   {
     icon: <Bot size={25} />,
+    title: "Ask About My Portfolio",
+    status: "MCP AI Project",
+    featured: true,
+    description:
+      "Explore my skills, projects and certifications through an AI assistant that retrieves public portfolio information using MCP. See the tools behind each answer.",
+    tags: ["MCP", "Generative AI", "React", "Node.js"],
+    action: <a href="/ask-portfolio">Ask a Question</a>,
+  },
+  {
+    icon: <Bot size={25} />,
     title: "AI Document Analyzer",
     status: "Portfolio AI Project",
     featured: true,

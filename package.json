@@ -4,7 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "npm --prefix backend/portfolio-ai start",
+    "dev": "node scripts/dev.mjs",
+    "dev:frontend": "vite",
+    "dev:assistant": "npm --prefix backend/portfolio-ai start",
     "build": "vite build",
     "preview": "vite preview"
   },

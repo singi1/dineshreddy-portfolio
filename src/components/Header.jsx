@@ -1,4 +1,5 @@
-import { ArrowDown, Download, Mail } from "lucide-react";
+import { ArrowDown, Download, Mail, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import profilePhoto from "../assets/dinesh-profile.jpg";
 
 export default function Header() {
@@ -6,13 +7,14 @@ export default function Header() {
     <header className="hero" id="home">
       <nav className="navbar container">
         <a className="brand" href="#home" aria-label="Dinesh Reddy home">
-          DR<span>.</span>
+          Dinesh Reddy<span></span>
         </a>
 
         <div className="navLinks">
           <a href="#about">About</a>
           <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
+          <a href="/ask-portfolio">Ask My Portfolio</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -39,6 +41,10 @@ export default function Header() {
             <a className="primaryButton" href="#projects">
               View Projects <ArrowDown size={18} />
             </a>
+
+            <Link className="secondaryButton" to="/ask-portfolio">
+              Ask My Portfolio <MessageCircle size={18} />
+            </Link>
 
             <a
               className="secondaryButton"

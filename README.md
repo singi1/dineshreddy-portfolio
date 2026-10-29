@@ -1,5 +1,9 @@
 # Dinesh Reddy Portfolio
 
+## Ask About My Portfolio (MCP demo)
+
+The `/ask-portfolio` page answers questions about public skills, projects and certifications using a custom MCP server. It shows the tools and retrieved information behind each answer. See [local setup and deployment instructions](backend/portfolio-ai/README.md). This demo has its own Node.js backend on port 8001, separate from DocumentAI.
+
 A React + Vite personal portfolio site prepared for `dineshreddy.info`.
 
 ## Features

@@ -855,3 +855,74 @@ a {
   background: transparent;
   padding: 0;
 }
+
+/* Portfolio MCP assistant */
+.portfolioAI { min-height: 100vh; background: #f4f7fc; }
+.portfolioAIHero { color: white; background: radial-gradient(ellipse at 85% 30%, #1a3961, transparent 65%), #07111f; }
+.portfolioAINav { min-height: 80px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ffffff20; }
+.portfolioAIBack { display: inline-flex; align-items: center; gap: 8px; color: #c5d4e8; font-size: .9rem; }
+.portfolioAIIntro { padding: 28px 0 32px; max-width: 720px; }
+.portfolioAIIntro h1 { margin: 14px 0 18px; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -.045em; }
+.portfolioAIIntro h1 span { color: #8eb7ff; }
+.portfolioAIIntro > p:not(.eyebrow) { max-width: 610px; color: #c5d4e8; line-height: 1.7; }
+.portfolioAIBadge { display: inline-flex; gap: 8px; align-items: center; border: 1px solid #8eb7ff40; border-radius: 30px; padding: 9px 13px; margin-top: 12px; font-size: .78rem; color: #c8ddff; }
+.portfolioAILayout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 36px; align-items: start; padding-top: 40px; padding-bottom: 50px; }
+.portfolioAIChat { background: white; border: 1px solid var(--border); border-radius: 18px; box-shadow: 0 12px 40px #14203306; overflow: hidden; min-width: 0; }
+.portfolioAIChatHeader { display: flex; align-items: center; gap: 14px; padding: 24px; border-bottom: 1px solid var(--border); }
+.portfolioAIChatHeader .iconBox { margin: 0; flex-shrink: 0; }
+.portfolioAIChatHeader h2 { font-size: 1.1rem; margin: 0 0 6px; }
+.portfolioAIChatHeader p { margin: 0; font-size: .85rem; color: var(--muted); line-height: 1.5; }
+.portfolioAIWelcome { padding: 28px 24px 8px; }
+.portfolioAIQuestions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 18px; }
+.portfolioAIQuestions button { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 18px; border: 1px solid var(--border); border-radius: 10px; background: #f8fbff; color: #263b59; text-align: left; line-height: 1.5; cursor: pointer; font: inherit; font-size: .9rem; }
+.portfolioAIQuestions svg { flex-shrink: 0; color: var(--blue-dark); }
+.portfolioAIQuestions button:hover:not(:disabled) { border-color: #8eb7ff; background: #eff5ff; }
+.portfolioAIMessages { max-height: 650px; overflow-y: auto; overflow-wrap: anywhere; }
+.portfolioAIExchange { padding: 24px; border-bottom: 1px solid var(--border); }
+.portfolioAIQuestion { padding: 15px 18px; border-radius: 10px; background: #eff5ff; }
+.portfolioAIQuestion > span { font-size: .72rem; font-weight: 700; color: #52698c; }
+.portfolioAIQuestion p { margin: 6px 0 0; line-height: 1.6; }
+.portfolioAIAnswer { padding: 24px 0 0; }
+.portfolioAISpeaker { display: inline-flex; align-items: center; gap: 7px; color: #2563eb; font-weight: 700; font-size: .8rem; }
+.portfolioAIAnswer .ai-markdown { font-size: .94rem; }
+.portfolioAIAnswer .ai-markdown a { color: #2563eb; text-decoration: underline; }
+.portfolioAIActivity { border-top: 1px solid var(--border); margin-top: 18px; padding-top: 14px; font-size: .78rem; color: #52647b; }
+.portfolioAIActivity summary { cursor: pointer; line-height: 1.8; }
+.portfolioAIActivity summary svg { vertical-align: middle; margin-right: 4px; color: #138054; }
+.portfolioAITool { padding: 14px 0 0; }
+.portfolioAITool > code { display: block; margin-top: 5px; color: #2563eb; }
+.portfolioAITool pre { padding: 12px; max-height: 220px; overflow: auto; border-radius: 8px; background: #f4f7fc; font-size: .73rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+.portfolioAILoading { display: flex; gap: 9px; align-items: center; padding: 10px 24px; color: #52698c; font-size: .88rem; }
+.portfolioAILoading svg { animation: portfolio-spin 1s linear infinite; }
+@keyframes portfolio-spin { to { transform: rotate(360deg); } }
+.portfolioAIForm { padding: 24px; }
+.portfolioAIForm label { display: block; font-weight: 700; font-size: .83rem; margin-bottom: 10px; }
+.portfolioAIInputRow { display: flex; gap: 10px; }
+.portfolioAIInputRow input { flex: 1; min-width: 0; padding: 14px; border: 1px solid #ccd7e6; border-radius: 9px; color: var(--text); background: white; }
+.portfolioAIInputRow .primaryButton { border: 0; cursor: pointer; flex-shrink: 0; }
+.portfolioAI button:disabled { opacity: .55; cursor: not-allowed; }
+.portfolioAI :is(button, input, a, summary):focus-visible { outline: 3px solid #3b82f6; outline-offset: 4px; }
+.portfolioAIHint { font-size: .75rem; color: var(--muted); line-height: 1.6; margin: 12px 0 0; }
+.portfolioAIError { color: #b42318; font-size: .85rem; line-height: 1.6; }
+.portfolioAIAside { padding: 14px 0; }
+.portfolioAIAside h2.sectionLabel { margin: 0; font-size: .8rem; }
+.portfolioAIAside .portfolioAIQuestions { grid-template-columns: 1fr; margin-bottom: 24px; }
+.portfolioAIAside > p:not(.sectionLabel) { color: var(--muted); font-size: .9rem; line-height: 1.75; }
+.portfolioAIAside ol { padding-left: 21px; margin: 24px 0; }
+.portfolioAIAside li { padding-left: 6px; margin-bottom: 22px; color: #2563eb; font-size: .88rem; }
+.portfolioAIAside li strong { display: block; color: var(--text); margin-bottom: 7px; }
+.portfolioAIAside li span { color: var(--muted); line-height: 1.65; }
+.portfolioAIResume { display: block; padding-top: 20px; border-top: 1px solid var(--border); color: #2563eb; font-size: .85rem; line-height: 1.7; }
+.portfolioAIResume svg { vertical-align: middle; }
+.portfolioAIFooter { padding: 20px 0 32px; color: var(--muted); font-size: .8rem; }
+.portfolioAIFooter a:hover { text-decoration: underline; }
+@media (max-width: 900px) { .portfolioAILayout { grid-template-columns: minmax(0, 1fr); gap: 24px; } .portfolioAIAside { max-width: 600px; } }
+@media (max-width: 550px) {
+  .portfolioAIQuestions { grid-template-columns: 1fr; }
+  .portfolioAIIntro { padding: 20px 0 24px; }
+  .portfolioAILayout { padding-top: 24px; }
+  .portfolioAIChatHeader, .portfolioAIWelcome, .portfolioAIForm, .portfolioAIExchange { padding: 20px; }
+  .portfolioAIInputRow .primaryButton { padding: 12px; }
+  .portfolioAIInputRow .primaryButton span { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .portfolioAILoading svg { animation: none; } .portfolioAI { scroll-behavior: auto; } }

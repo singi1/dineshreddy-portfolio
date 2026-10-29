@@ -1,0 +1,46 @@
+{
+  "profile": {
+    "name": "Dinesh Reddy",
+    "title": "Senior Programming Analyst & Product Owner",
+    "experience": "14+ years",
+    "location": "Tampa, Florida",
+    "summary": "Delivers enterprise software, integrations, modernization initiatives and agile products. Experience spans requirements, design, development, testing, deployment, support, CI/CD and product ownership. Has led cross-functional teams and coordinated enterprise migrations and integrations.",
+    "interests": ["Product leadership", "Enterprise software", "Cloud", "Automation", "Practical generative AI"],
+    "ai_background": "Graduate machine-learning and text-summarization research at Kansas State University in 2010, Azure AI Fundamentals, and practical generative AI application development.",
+    "source": "/#about",
+    "resume": "/Dinesh-Reddy-Resume.pdf",
+    "contact": "/#contact",
+    "limitations": "The portfolio does not publish a detailed employment timeline, salary expectations, availability, or private employer/client information. Do not infer those details. Azure AI Fundamentals is listed as a skill/background credential; no verification link is supplied."
+  },
+  "skills": {
+    "source": "/#skills",
+    "groups": [
+      { "title": "AI & Data", "skills": ["Azure AI Fundamentals", "Machine Learning", "Text Summarization", "SQL", "Oracle", "SQL Server", "JasperReports", "SAP Business Objects"] },
+      { "title": "Application Development", "skills": ["Java", "JavaScript", "JSP", "JSF", "PrimeFaces", "jQuery", "AJAX", "Spring MVC", "Struts", "JPA", "VB.NET"] },
+      { "title": "APIs & Integration", "skills": ["REST", "SOAP", "Web Services", "JAXB", "LDAP", "SFTP", "Enterprise Integration", "Secure Data Transfer"] },
+      { "title": "Cloud, Platforms & DevOps", "skills": ["OpenShift", "WebSphere", "JBoss", "Apache", "TFS", "CI/CD", "Build Automation", "GoAnywhere", "Apache Ant"] },
+      { "title": "Product & Agile", "skills": ["Product Ownership", "Product Management", "Scrum", "SAFe", "Backlog Management", "Sprint Planning", "Stakeholder Management", "Team Leadership", "Mentoring", "JIRA", "Rally"] }
+    ]
+  },
+  "projects": {
+    "source": "/#projects",
+    "items": [
+      { "title": "AI Document Analyzer", "description": "Generative AI application accepting PDF, DOCX and TXT documents for summaries, key points and document Q&A. React frontend with a Python FastAPI backend supporting Gemini or OpenAI.", "technologies": ["Generative AI", "React", "Python", "FastAPI", "Document Processing", "Cloud"], "link": "/document-ai" },
+      { "title": "Ask About My Portfolio", "description": "An AI assistant that retrieves public portfolio information through a custom MCP server, with visible tool results.", "technologies": ["MCP", "React", "Node.js", "Gemini"], "link": "/ask-portfolio" },
+      { "title": "Comparative Text Summarization", "description": "2010 graduate research at Kansas State University on comparative summarization of product reviews using sentiment analysis, opinion mining, feature extraction and statistical machine learning.", "technologies": ["NLP", "Machine Learning", "Sentiment Analysis", "Opinion Mining", "Text Summarization"], "link": "https://krex.k-state.edu/items/105ee1ef-fb61-43ef-a4b4-1bd036bd907f", "thesis": "https://krex.k-state.edu/bitstreams/03345614-1cdd-45c8-8529-39d55e816af9/download" },
+      { "title": "Enterprise Collections Integration", "description": "Led integration between enterprise collections applications and banking core systems, establishing end-to-end connectivity across services and teams.", "technologies": ["System Integration", "Product Ownership", "Enterprise"] },
+      { "title": "Batch Automation Platform", "description": "Built a batch automation tool with a UI and supporting scripts, configuration guidance and deployment documentation.", "technologies": ["Java", "Automation", "Oracle", "WebSphere"] },
+      { "title": "CI/CD & Deployment Automation", "description": "Designed and maintained TFS pipelines for build management, CI/CD and deployment automation.", "technologies": ["TFS", "CI/CD", "DevOps", "Automation"] },
+      { "title": "Secure Healthcare Data Integration", "description": "Developed Java and Perl automation for secure data transfer, supporting SQL Server, SFTP, scheduling and multi-state platform migrations.", "technologies": ["Java", "Perl", "SQL Server", "SFTP"] }
+    ]
+  },
+  "certifications": {
+    "source": "/#certifications",
+    "items": [
+      { "title": "Certified SAFe 6 Scrum Master", "issuer": "Scaled Agile, Inc.", "verify": "https://www.credly.com/badges/1b0d1fe6-73ee-4eac-b098-bd643ffa4eab/public_url" },
+      { "title": "Certified SAFe 6 Product Owner / Product Manager", "issuer": "Scaled Agile, Inc.", "verify": "https://www.credly.com/badges/cb1b6304-4cf6-4d8a-8202-aa861138db8f/public_url" },
+      { "title": "Certified SAFe 6 DevOps Practitioner", "issuer": "Scaled Agile, Inc.", "verify": "https://www.credly.com/badges/f84ce20a-5f27-4b6a-bbb6-718a690d03fa/public_url" },
+      { "title": "Project Management Professional (PMP)", "issuer": "Project Management Institute", "verify": "https://www.credly.com/badges/fef9ff61-2c9d-43e0-a54c-2fbb51176310/public_url" }
+    ]
+  }
+}
